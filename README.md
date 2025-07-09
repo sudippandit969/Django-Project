@@ -1,10 +1,7 @@
 # 🧾 SMART RECIPE BOOK
 This is a simple "Recipe Management Web Application" built using Django. It allows users to create, view, and manage their favorite recipes.
 
-## 🔗 Live Demo
-🚀 [View Live App](https://sudippandit.pythonanywhere.com/)
 
-You can log in or register to start adding your own recipes.
 
 ## 📌 Features
 
