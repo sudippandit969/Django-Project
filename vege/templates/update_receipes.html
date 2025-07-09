@@ -1,0 +1,56 @@
+{%extends "base.html"%}
+{%block start%}
+
+{% comment %} <div class="container ">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary outline card shadow-lg mx-auto px-3 py-2">
+    <div class="container-fluid">  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-2 mt-lg-0">
+          <li class="nav-item me-2">
+            <a class="nav-link active" style="background-color:#f4845f; color:white; border-radius: 8px; padding: 6px 12px;" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item me-2">
+            <a class="nav-link" style="background-color:#f79d65; color:white; border-radius: 8px; padding: 6px 12px;" href="#">Link</a>
+          </li>
+          <li class="nav-item me-2"><a class="nav-link" style="background-color:#f79d65; color:white; border-radius: 8px; padding: 6px 12px;" href="#">Debu</a>
+          </li>
+          <li class="nav-item dropdown me-2">
+            <a class="nav-link dropdown-toggle" style="background-color:#f7b267; color:white; border-radius: 8px; padding: 6px 12px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Customer Service</a></li>
+              <li><a class="dropdown-item" href="#">Social Media</a></li>
+            </ul>
+          </li>
+        </ul>
+        <button class="btn" style="background-color:#006d77; color:white;" type="submit">Profile</button>
+      </div>
+    </div>
+  </nav>
+   {% endcomment %}
+
+    <form method="post" enctype="multipart/form-data" class="col-6 mx-auto card p-3 shadow-lg mt-2 ">
+        {%csrf_token%}
+        <h2>
+            Update receipe
+        </h2>
+        <hr></hr>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Receipe Name</label>
+          <input name="receipe_name" value="{{receipe.receipe_name}}" required type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1"  class="form-label">Receipe Descripsion</label>
+          <textarea name="receipe_description" value=""  required class="form-control">{{receipe.receipe_description}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1"  class="form-label">Receipe Image</label>
+            <input name="receipe_image" type="file" class="form-control">
+          </div>
+
+        <button type="submit" class="btn btn-success">Update Receipe</button>
+      </form>
+</div>
+
+{%endblock%}

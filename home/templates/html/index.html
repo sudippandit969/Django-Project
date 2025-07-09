@@ -1,0 +1,40 @@
+{%extends "base.html"%}
+{%block start%}
+    <h1>hey this a html sample file</h1>
+    <a href="/contact">contact|</a>
+    <a href="/about">about</a>
+
+    <table class="container">
+        <tr>
+          <th>S.No</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>canvote</th>
+        </tr>
+        {%for people in peoples%}
+        <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{people.name}}</td>
+        <td>{{people.age}}</td>
+        <td>
+            {%if people.age >= 18 %}
+            👍
+            {% else %}
+            👎
+            {%endif%}
+        </td>
+
+        </tr>
+        {% endfor %}
+
+      </table>
+      {% comment %} <p>{{text|truncatechars:150}}</p> {% endcomment %}
+     {% comment %} <p>
+        {% if "pumpkin" in vegetables %}
+                yes Available
+        {% else %}
+                No Available
+        {%endif%}
+
+     </p> {% endcomment %}
+{%endblock%} 
