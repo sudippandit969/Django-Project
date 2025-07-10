@@ -1,12 +1,79 @@
-{%extends "base.html"%} {%block start%}
-<div class="container mt-5">
-  <div
-    class="container mx-auto outline shadow-lg px-3 py-2"
-    style="background-color: #e4bb96"
-  >
-    <h1>About Us</h1>
-    <hr />
-    <h3>Working on it!</h3>
+{% extends "base.html" %}
+{% block start %}
+<style>
+  .content-wrapper {
+    padding-top: 110px;
+  }
+  .card {
+    width: 600px;
+    background:mediumspringgreen;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .quote {
+    color: rgb(223, 248, 134);
+    padding-left: 30px;
+  }
+
+  .card-name {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgb(36, 45, 5);
+    margin-bottom: 10px;
+  }
+
+  .body-text {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color:rgb(47, 57, 11);
+    margin-top: 20px;
+    line-height: 1.4;
+  }
+
+  .author {
+    margin-top: 30px;
+    font-weight: 700;
+    color: rgb(23, 27, 9);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .card:hover .author {
+    opacity: 1;
+  }
+
+  .author svg {
+    width: 18px;
+    height: 18px;
+    fill: rgba(127, 155, 29, 0.5);
+  }
+</style>
+
+<div class="container content-wrapper">
+  <div class="card mt-4">
+    <div class="card-name">About the Smart Recipe Book Project</div>
+    <p>
+      The <strong>Smart Recipe Book</strong> is a Django-based web application designed to simplify cooking and meal planning.
+      Users can add, browse, and manage their personal collection of recipes with ease. The application includes features like
+      recipe creation, photo uploads, and categorized browsing, all wrapped in a modern UI built with Bootstrap 5.
+    </p>
+    <p>
+      With secure user authentication, every user has a private space for saving and editing recipes. This project is a full-stack
+      implementation showcasing skills in Python, Django, HTML, CSS, Bootstrap, and GitHub deployment — ideal for portfolio and learning.
+    </p>
+    <div class="author">
+      Made By Sudip Pandit
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0H24V24H0z" fill="none"></path>
+        <path
+          d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z" />
+      </svg>
+    </div>
   </div>
 </div>
-{%endblock%}
+{% endblock %}

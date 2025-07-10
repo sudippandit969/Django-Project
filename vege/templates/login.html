@@ -1,39 +1,81 @@
-{%extends "base.html"%}
-{%block start%}
+{% extends "base.html" %}
+{% block start %}
 
-<div class="container mt-5" >
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <form method="post" enctype="multipart/form-data" class="card p-4 custom-form shadow-lg">
+    {% csrf_token %}
+    
+    {% if messages %}
+      <div class="alert alert-primary" role="alert">
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+      </div>
+    {% endif %}
 
-    <form method="post" enctype="multipart/form-data" class="col-6 mx-auto card p-2 shadow-lg " style="background-color:#e4bb97;">
-        {%csrf_token%}
-        {% if messages %}
-          {{ message.tags }}
-          <div class="alert alert-primary" role="alert">
-              {% for message in messages %}
-                {{ message }}
-              {% endfor %}
-            </div>
-        {% endif %}
-        <h2>
-            Login
-        </h2>
-        <hr></hr>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Username</label>
-              <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">Please enter your username</div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" name="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <p>don't have an account?<a href="/register/">Register</p>
-            <button type="submit" class="btn btn-primary">Submit</button>
+    <h3 class="text-center mb-4 heading">LOGIN</h3>
 
-      </form>
+    <div class="form-group mb-3">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" class="form-control custom-input" placeholder="Enter username" required>
+      <small class="form-text text-muted">Please enter your username</small>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" class="form-control custom-input" placeholder="Enter password" required>
+    </div>
+
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input" id="rememberCheck">
+      <label class="form-check-label" for="rememberCheck">Check me out</label>
+    </div>
+
+    <p>Don't have an account? <a href="/register/">Register</a></p>
+
+    <button type="submit" class="btn custom-btn w-100">Submit</button>
+  </form>
 </div>
 
-{%endblock%}
+<style>
+.custom-form {
+  width: 420px;
+  background-color: #e4bb97;
+  border-radius: 10px;
+}
+
+.custom-input {
+  background-color: #EADDCA;
+  border: 1px solid #DAA06D;
+  color: #DAA06D;
+  text-align: center;
+  height: 3em;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.heading {
+  color: #DAA06D;
+  letter-spacing: 0.3em;
+  text-shadow: inset -1px -1px 1px #DAA06D;
+}
+
+.custom-btn {
+  background-color: #E5AA70;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  border: none;
+  padding: 1em;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-btn:hover {
+  background-color: #cf935f;
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+</style>
+
+{% endblock %}

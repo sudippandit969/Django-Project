@@ -1,6 +1,6 @@
 {%extends "base.html"%}
 {%block start%}
-    <h1>hey this a html sample file</h1>
+    {% comment %} <h1>hey this a html sample file</h1>
     <a href="/contact">contact|</a>
     <a href="/about">about</a>
 
@@ -27,7 +27,7 @@
         </tr>
         {% endfor %}
 
-      </table>
+      </table> {% endcomment %}
       {% comment %} <p>{{text|truncatechars:150}}</p> {% endcomment %}
      {% comment %} <p>
         {% if "pumpkin" in vegetables %}

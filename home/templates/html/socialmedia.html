@@ -1,13 +1,102 @@
-{%extends "base.html"%}
-{%block start%}
-    <div class="container mt-5">
-        <div class="container mx-auto outline shadow-lg px-3 py-2 " style="background-color:#e4bb96;">
-            <h1>SOCIALS</h1>
-            <hr>
-            <h3>Linkedin </h3>
-            <a href="https://www.linkedin.com/in/me/">www.linkedin.com/in/sudip-pandit-100969261</a>
-            <h3>GitHub</h3>
-            <a href="https://github.com/sudippandit969">https://github.com/sudippandit969</a>
-        </div>
-    </div>
-{%endblock%}
+{% extends "base.html" %}
+{% block start %}
+<style>
+  .button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0.6em 2em;
+    border: mediumspringgreen solid 0.15em;
+    border-radius: 0.25em;
+    color: mediumspringgreen;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border 300ms, color 300ms;
+    user-select: none;
+    margin: 1rem auto;
+    width: fit-content;
+  }
+
+  .button p {
+    z-index: 1;
+    margin: 0;
+  }
+
+  .button:hover {
+    color: #212121;
+  }
+
+  .button:active {
+    border-color:rgb(10, 121, 114);
+  }
+
+  .button::after,
+  .button::before {
+    content: "";
+    position: absolute;
+    width: 9em;
+    aspect-ratio: 1;
+    background: mediumspringgreen;
+    opacity: 50%;
+    border-radius: 50%;
+    transition: transform 500ms, background 300ms;
+  }
+
+  .button::before {
+    left: 0;
+    transform: translateX(-8em);
+  }
+
+  .button::after {
+    right: 0;
+    transform: translateX(8em);
+  }
+
+  .button:hover::before {
+    transform: translateX(-1em);
+  }
+
+  .button:hover::after {
+    transform: translateX(1em);
+  }
+
+  .button:active::before,
+  .button:active::after {
+    background: teal;
+  }
+
+  .social-container {
+    text-align: center;
+    padding: 300px 20px;
+    color:rgb(15, 3, 82);
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .social-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+
+</style>
+
+<div class="container social-container">
+  <h1>SOCIALS</h1>
+  <hr style="border-color:rgb(1, 13, 14)
+  ; width: 60%; margin: auto; margin-bottom: 2rem;">
+
+
+  <a href="https://www.linkedin.com/in/sudip-pandit-100969261" target="_blank" style="text-decoration: none;">
+    <button class="button"><p>LinkedIn</p></button>
+  </a>
+
+
+  <a href="https://github.com/sudippandit969" target="_blank" style="text-decoration: none;">
+    <button class="button"><p>GitHub</p></button>
+  </a>
+</div>
+{% endblock %}
